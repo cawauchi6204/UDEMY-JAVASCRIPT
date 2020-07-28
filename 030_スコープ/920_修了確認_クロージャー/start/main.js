@@ -15,27 +15,38 @@
  * ※前に行った計算結果をもとに四則演算を行います。
  * ※四則演算は"+","-","*","/"を数値ではさんで計算を行います。
  */
+function calcFactory(val) {
+    return {
+        plus:function(target) {
+            const newVal = val + target
+            console.log(val + target)
+            val = newVal
+        },
+        minus:function(target) {
+            const newVal = val - target
+            console.log(val - target)
+            val = newVal
+        },
+        multiply:function(target) {
+            const newVal = val * target
+            console.log(val * target)
+            val = newVal
+        },
+        divide:function(target) {
+            const newVal = val / target
+            console.log(val / target)
+            val = newVal
+        }
+    }
+}
 
-// function calcFactory(num) {
-//     function plus(value) {
-//         let num;
-//         return num + value
-//     }
-//     function minus(value) {
-//         let num;
-//         return num - value
-//     }
-//     function multiply(value) {
-//         let num;
-//         return num * value
-//     }
-//     function divide(value) {
-//         let num;
-//         return num / value
-//     }
-//     return num;
-// }
-// let calc = calcFactory(3)
-// calc.plus(3);
 
+const calc = calcFactory(10);
 
+calc.plus(5);      // 出力結果 "10 + 5 = 15"
+
+calc.minus(3);     // 出力結果 "15 - 3 = 12"
+
+calc.multiply(3);  // 出力結果 "12 x 3 = 36"
+
+calc.divide(2);    // 出力結果 "36 / 2 = 18"
