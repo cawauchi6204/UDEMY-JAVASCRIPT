@@ -5,12 +5,9 @@
  * 問題１：
  * addNumberFactoryを短く書き直してみましょう。
  */
-function addNumberFactory(num) {
-    function addNumber(value) {
-        return num + value;
-    }
-    return addNumber;
-}
+const addNumberFactory = num => value => num + value;
+// 上記の記法はクロージャーの記法
+
 
 const add5 = addNumberFactory(5);
 const result = add5(10);
@@ -20,17 +17,11 @@ console.log(result);
  * 問題２：
  * incrementFactoryを短く書き直してみましょう。
  */
-function incrementFactory() {
-    
+const incrementFactory = () => {
     let num = 0;
-
-    function a() {
-        num = num + 1;
-        console.log(num);
-    }
-
-    return a;
+    return () => console.log(num++);
 }
+
 
 const increment = incrementFactory();
 

@@ -6,31 +6,39 @@
  */
 function calcFactory(val, callback) {
     return {
-        plus: function(target) {
+        plus: function (target) {
             const newVal = val + target;
-            callback(`${val} + ${target} = ${newVal}`);
+            setTimeout(() => {
+                callback(`${val} + ${target} = ${newVal}`);
+            }, 1000)
             val = newVal;
         },
-        minus: function(target) {
+        minus: function (target) {
             const newVal = val - target;
-            callback(`${val} - ${target} = ${newVal}`);
+            setTimeout(() => {
+                callback(`${val} - ${target} = ${newVal}`);
+            }, 1000)
             val = newVal;
         },
-        multiply: function(target) {
+        multiply: function (target) {
             const newVal = val * target;
-            callback(`${val} x ${target} = ${newVal}`);
+            setTimeout(() => {
+                callback(`${val} x ${target} = ${newVal}`);
+            }, 1000)
             val = newVal;
         },
-        divide: function(target) {
+        divide: function (target) {
             const newVal = val / target;
-            callback(`${val} / ${target} = ${newVal}`);
+            setTimeout(() => {
+                callback(`${val} / ${target} = ${newVal}`);
+            }, 1000)
             val = newVal;
         }
     };
 }
 
-const calc = calcFactory(10, console.log);
-calc.plus(5); 
-calc.minus(3); 
+const calc = calcFactory(10, alert);
+calc.plus(5);
+calc.minus(3);
 calc.multiply(3);
 calc.divide(2);

@@ -7,11 +7,18 @@ const person = {
         console.log(greeting + ' ' + this.name);
         return greeting + ' ' + this.name;
     },
+    hello1s() {
+        const _this = this;
+        setTimeout(() => {
+            _this.hello('hello')
+        },1000)
+    }
     /**
      * 問題４：
      * 1秒後に"hello Tom"
      * と出力されるような、メソッドを
      * personオブジェクトに追加してみてください。
+     * 
      * 
      * 以下のように使用するものとします。
      * `person.hello1s()` 
@@ -26,6 +33,7 @@ const person = {
 
     
 }
+person.hello1s()
 
 /**
  * 問題１：
@@ -33,7 +41,9 @@ const person = {
  * と出力されるように、以下のコード
  * の記載を変更しましょう。
  */
-setTimeout(person.hello, 1000);
+setTimeout(() => {
+    person.hello.bind(person,"hello")
+}, 1000);
 
 /**
  * 問題２：
@@ -41,7 +51,7 @@ setTimeout(person.hello, 1000);
  * と出力されるように、
  * 以下のコードを変更してください。
  */
-alert(person.hello);
+// alert(person.hello('hello'));
 
 /**
  * 問題３：
@@ -50,4 +60,4 @@ alert(person.hello);
  * "Bye"しか表示されませんでした。
  * "Bye Tom"とするためにはどうすればよいでしょうか？
  */
-setTimeout(person.bye.bind(person), 1000);
+// setTimeout(person.bye.bind(person), 1000);
