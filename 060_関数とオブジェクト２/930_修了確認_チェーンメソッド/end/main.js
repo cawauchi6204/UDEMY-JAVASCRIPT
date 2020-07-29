@@ -42,7 +42,7 @@ class Calculator {
 	plus() {
 		this._operator = function(val1, val2) {
 			const result = val1 + val2;
-			this._equal(result);
+			this._equal = result;
 		}
 		return this;
 	}
@@ -50,7 +50,7 @@ class Calculator {
 	minus() {
 		this._operator = function(val1, val2) {
 			const result = val1 - val2;
-			this._equal(result);
+			this._equal = result;
 		}
 		return this;
 	}
@@ -58,7 +58,7 @@ class Calculator {
 	multiply() {
 		this._operator = function(val1, val2) {
 			const result = val1 * val2;
-			this._equal(result);
+			this._equal = result;
 		}
 		return this;
 	}
@@ -66,7 +66,7 @@ class Calculator {
 	divide() {
 		this._operator = function(val1, val2) {
 			const result = val1 / val2;
-			this._equal(result);
+			this._equal = result;
 		}
 		return this;
 	}
